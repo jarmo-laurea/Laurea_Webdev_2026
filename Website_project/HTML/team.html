@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joukkue - Kyröskosken Pärske</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    
+    <style>
+      /* CUSTOM CSS: Omat tyylit navbaria varten */
+      .logo-img { max-width: 150px; height: auto; }
+      
+      .puck-link {
+        /* CSS FLEXBOX: Keskittää tekstin kiekon sisälle */
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 120px; height: 120px;
+        background-image: url('/Website_project/images/puck.png'); 
+        background-color: #222; background-size: cover; background-position: center;
+        border-radius: 50%; color: white; text-decoration: none; font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8); 
+        /* CSS TRANSITIONS: Mahdollistaa pehmeän hover-efektin */
+        transition: transform 0.2s ease-in-out, background-color 0.2s;
+      }
+
+      .puck-link:hover { color: #fff; transform: scale(1.05); background-color: #444; }
+
+      /* Pelaajakorttien CUSTOM CSS */
+      .player-img {
+        height: 250px;
+        /* CSS OBJECT-FIT: Varmistaa, että erikokoisetkin kuvat täyttävät 
+           niille varatun 250px korkean laatikon muuttumatta venyneen näköisiksi. */
+        object-fit: cover; 
+      }
+      
+      .player-number {
+        /* CSS POSITIONING: 'absolute' mahdollistaa elementin vapaan sijoittelun sen lähimmän 
+           'relative'-vanhemman (tässä tapauksessa .card) sisällä. */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        /* CSS RGBA COLOR: Musta tausta, jossa on 75% läpinäkyvyys (opacity) */
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 5px 15px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-md navbar-light bg-light py-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/Website_project/index.html">
+          <img src="/Website_project/images/logo.jpg" alt="Kyrspä Logo" class="img-fluid logo-img" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kyrspaNavbar" aria-controls="kyrspaNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="kyrspaNavbar">
+          <ul class="navbar-nav align-items-center gap-3 mt-4 mt-md-0">
+            <li class="nav-item"><a href="/Website_project/HTML/team.html" class="puck-link">Joukkue</a></li>
+            <li class="nav-item"><a href="/Website_project/HTML/contact.html" class="puck-link">Yhteydenotto</a></li>
+            <li class="nav-item"><a href="/Website_project/HTML/scores.html" class="puck-link">Tulokset</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+      <h1 class="text-center mb-5 fw-bold">Kyrspän Rosteri 2024-2025</h1>
+
+      <h2 class="border-bottom pb-2 mb-4">Maalivahdit</h2>
+      
+      <div class="row g-4 mb-5">
+        
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#1</span>
+            <img src="https://ui-avatars.com/api/?name=Jallu+Läski&background=0D8ABC&color=fff&size=400" class="card-img-top player-img" alt="Maalivahti 1">
+            <div class="card-body">
+              <h5 class="card-title">Jallu "Läski" Salonen</h5>
+              <p class="card-text text-muted">Torjuntatyyli: Perhonen / Räpiköinti</p>
+              <p class="card-text">Pysäyttää kiekot hyvällä tuulella ollessaan, jos ne tulevat kohti. Saunailtojen itseoikeutettu dj.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#35</span>
+            <img src="https://ui-avatars.com/api/?name=Seppo+Seinä&background=0D8ABC&color=fff&size=400" class="card-img-top player-img" alt="Maalivahti 2">
+            <div class="card-body">
+              <h5 class="card-title">Seppo "Seinä" Nieminen</h5>
+              <p class="card-text text-muted">Torjuntatyyli: Stand-up</p>
+              <p class="card-text">Vanhan liiton kassari, käyttää sohvatyynyjä jalkasuojuksina. Refleksit eivät ole entisellään, mutta sijoittuminen ja puhemylly korvaavat paljon.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h2 class="border-bottom pb-2 mb-4">Puolustajat</h2>
+      <div class="row g-4 mb-5">
+        
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#4</span>
+            <img src="https://ui-avatars.com/api/?name=Jari+Jyrä&background=random&color=fff&size=400" class="card-img-top player-img" alt="Puolustaja">
+            <div class="card-body">
+              <h5 class="card-title">Jari "Jyrä" Koskinen</h5>
+              <p class="card-text">Vahvuudet: Maalineduspelaaminen ja viivapelote (kaikille jäällä oleville).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#8</span>
+            <img src="https://ui-avatars.com/api/?name=Timo+Lämäri&background=random&color=fff&size=400" class="card-img-top player-img" alt="Puolustaja">
+            <div class="card-body">
+              <h5 class="card-title">Timo "Lämäri" Laakso</h5>
+              <p class="card-text">Laukoo aina kun paikka on (ja usein kun ei ole). Osuu maaliin n. 5% todennäköisyydellä. Erikoisuus: teki 4 maalia 2-2 päättyneessä ottelussa</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#44</span>
+            <img src="https://ui-avatars.com/api/?name=Matti+Puukäsi&background=random&color=fff&size=400" class="card-img-top player-img" alt="Puolustaja">
+            <div class="card-body">
+              <h5 class="card-title">Matti "Puukäsi" Mäkelä</h5>
+              <p class="card-text">Kiekollinen vastuu pidetään minimissä. Hoitaa purkukiekot ränniin 110% lasissa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#55</span>
+            <img src="https://ui-avatars.com/api/?name=Pekka+Poliisi&background=random&color=fff&size=400" class="card-img-top player-img" alt="Puolustaja">
+            <div class="card-body">
+              <h5 class="card-title">Pekka "Peltipoliisi" Peltonen</h5>
+              <p class="card-text">Joukkueen jäähykuningas. Hidas mutta kankea. Ei anna tuumaakaan periksi kulmaväännöissä.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h2 class="border-bottom pb-2 mb-4">Hyökkääjät</h2>
+      <div class="row g-4 mb-5">
+        
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#9</span>
+            <img src="https://ui-avatars.com/api/?name=Rane+Raketti&background=e74c3c&color=fff&size=400" class="card-img-top player-img" alt="Hyökkääjä">
+            <div class="card-body">
+              <h5 class="card-title">Rane "Raketti" Rantanen</h5>
+              <p class="card-text">Luistelee kovempaa kuin ajattelee. Yleensä paitsiossa ennen kuin syöttö edes lähtee.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#10</span>
+            <img src="https://ui-avatars.com/api/?name=Jani+Kynä&background=e74c3c&color=fff&size=400" class="card-img-top player-img" alt="Hyökkääjä">
+            <div class="card-body">
+              <h5 class="card-title">Jani "Kynä" Järvinen</h5>
+              <p class="card-text">Yrittää aina ilmaveiviä, onnistunut kerran harjoituksissa vuonna 2012.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#13</span>
+            <img src="https://ui-avatars.com/api/?name=Ville+Vapaa&background=e74c3c&color=fff&size=400" class="card-img-top player-img" alt="Hyökkääjä">
+            <div class="card-body">
+              <h5 class="card-title">Ville "Vapaamatkustaja" Valo</h5>
+              <p class="card-text">Kärkkyy aina punaviivalla. Omiin päin luistelu aiheuttaa väitetysti allergisia reaktioita.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#69</span>
+            <img src="https://ui-avatars.com/api/?name=Keke+Magneetti&background=e74c3c&color=fff&size=400" class="card-img-top player-img" alt="Hyökkääjä">
+            <div class="card-body">
+              <h5 class="card-title">Keke "Kiekkomagneetti" Ketonen</h5>
+              <p class="card-text">Kiekko löytää aina tiensä Kekelle, yleensä tosin suoraan luistimeen tai polvisuojiin.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="card h-100 shadow-sm position-relative">
+            <span class="player-number">#88</span>
+            <img src="https://ui-avatars.com/api/?name=Sami+Sniper&background=e74c3c&color=fff&size=400" class="card-img-top player-img" alt="Hyökkääjä">
+            <div class="card-body">
+              <h5 class="card-title">Sami "Snaipperi" Salo</h5>
+              <p class="card-text">Joukkueen kultakypärä. Tekee maaleja ja muistaa myös kertoa siitä kaikille pelin jälkeen.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-

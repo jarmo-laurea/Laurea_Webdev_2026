@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yhteydenotto - Kyröskosken Pärske</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    
+    <style>
+      /* Navbar tyylit (Kopioitu suoraan muilta sivuilta) */
+      .logo-img { max-width: 150px; height: auto; }
+      
+      /* Kiekon muotoiset navigointilinkit. display: inline-flex ja align-items auttavat keskittämään tekstin kiekon sisälle. */
+      .puck-link {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 120px; height: 120px;
+        background-image: url('/Website_project/images/puck.png'); 
+        background-color: #222; background-size: cover; background-position: center;
+        border-radius: 50%; /* Tekee elementistä täysin pyöreän */
+        color: white; text-decoration: none; font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8); 
+        transition: transform 0.2s ease-in-out, background-color 0.2s; /* Pehmeä animaatio hiiren ollessa päällä */
+      }
+
+      /* Hover-efekti: Suurentaa kiekkoa hieman (scale 1.05) kun hiiri viedään päälle */
+      .puck-link:hover { color: #fff; transform: scale(1.05); background-color: #444; }
+
+      /* Yhteystietojen laatikon omat taustavärit */
+      .info-box {
+        background-color: #f8f6f0;
+        border: 1px solid #e0ddd5;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-md navbar-light bg-light py-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/Website_project/index.html">
+          <img src="/Website_project/images/logo.jpg" alt="Kyrspä Logo" class="img-fluid logo-img" />
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#kyrspaNavbar" aria-controls="kyrspaNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="kyrspaNavbar">
+          <ul class="navbar-nav align-items-center gap-3 mt-4 mt-md-0">
+            <li class="nav-item"><a href="/Website_project/HTML/team.html" class="puck-link">Joukkue</a></li>
+            <li class="nav-item"><a href="/Website_project/HTML/contact.html" class="puck-link">Yhteydenotto</a></li>
+            <li class="nav-item"><a href="/Website_project/HTML/scores.html" class="puck-link">Tulokset</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 mb-5" style="max-width: 800px;">
+      
+      <div class="info-box p-4 rounded shadow-sm mb-5 text-center">
+        <h2 class="fw-bold mb-3">Yhteystiedot</h2>
+        <p class="lead mb-1 fw-bold">Kyröskosken Pärske RY</p>
+        <p class="mb-1 text-muted">Kyröskosken Kiakkopyhättö</p>
+        <p class="mb-0">Eljaalantie 1, 39130 Kyröskoski</p>
+      </div>
+
+      <div class="card shadow-sm p-4 p-md-5">
+        <h3 class="border-bottom pb-3 mb-4 fw-bold text-center">Seuraan liittymislomake</h3>
+        
+        <form onsubmit="alert('Hakemus lähetetty! Scouttimme ottavat yhteyttä (tai ovat ottamatta).'); return false;">
+          
+          <div class="row g-3 mb-3">
+            <div class="col-12 col-sm-6">
+              <label for="firstName" class="form-label fw-bold">Etunimi:</label>
+              <input type="text" id="firstName" class="form-control" required />
+            </div>
+            <div class="col-12 col-sm-6">
+              <label for="lastName" class="form-label fw-bold">Sukunimi:</label>
+              <input type="text" id="lastName" class="form-control" required />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="phoneNumber" class="form-label fw-bold">Puhelinnumero:</label>
+            <input type="tel" id="phoneNumber" class="form-control" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="stats" class="form-label fw-bold">Pituus / paino:</label>
+            <input type="text" id="stats" class="form-control" placeholder="Esim. 180 cm / 95 kg (sulka päässä / märkänä)" required />
+          </div>
+
+          <div class="mb-4">
+            <label for="points" class="form-label fw-bold">Aiemmat pistetilastot ja urakehitys:</label>
+            <textarea id="points" class="form-control" rows="4" placeholder="Kerro lyhyesti tehopisteistäsi tai miksi juuri sinä sopisit Pärskeen kärkikahinoihin..." required></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-dark btn-lg px-5">Lähetä hakemus</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+    <footer class="text-center py-4 mt-5 bg-light">
+      <small class="text-muted">&copy; 2024 Kyröskosken Pärske - Kyrspä. Kaikki oikeudet pidätetään.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
